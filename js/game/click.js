@@ -30,7 +30,8 @@ document.addEventListener("click", function(event) {
 function render(game){
     game.forEach( function(item) {
         box = document.querySelector(`#${item}`)
-        box.innerText = "2";
+        box.innerText = "x";
+        socket.send(JSON.stringify({game: game, method:"render"}))
     });
 }
 
@@ -63,6 +64,7 @@ function handleMessage(message) {
         restart();
     }
     if (message.method === "render") {
-        render();
+        game = message.game
+        render(game);
     }
 }
