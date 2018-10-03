@@ -55,13 +55,13 @@ function checkWinner(){
             if (Row == 5){
                 for (let ind = 0 ; ind<5; ind++){
                     let boxS = document.querySelector(`#c${index}-${ind}`) 
-                    boxS.classList.add('bg-success');
+                    boxS.classList.add('bg-info');
                 }
             }
             if (Col == 5){
                 for (let ind = 0 ; ind<5; ind++){
                     let boxS = document.querySelector(`#c${ind}-${index}`) 
-                    boxS.classList.add('bg-success');
+                    boxS.classList.add('bg-info');
                 }
             }
 
