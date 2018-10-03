@@ -7,6 +7,10 @@ document.addEventListener("click", function(event) {
         
         render(game);
         
+        if(checkWinner()){
+            result.innerText="Winner player: " + player;
+        }
+
         temp.innerText += "Clicked " + player + ":" + event.target.id + "\n";
         
         if (player == 1) {
