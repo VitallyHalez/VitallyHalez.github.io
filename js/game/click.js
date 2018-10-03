@@ -31,7 +31,6 @@ function render(game){
     game.forEach( function(item) {
         box = document.querySelector(`#${item}`)
         box.innerText = "x";
-        socket.send(JSON.stringify({game: JSON.stringify(game), method:"render"}))
     });
 }
 
@@ -64,7 +63,6 @@ function handleMessage(message) {
         restart();
     }
     if (message.method === "render") {
-        game = message.game
         render(game);
     }
 }
