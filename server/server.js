@@ -25,12 +25,18 @@ function handleMessage(message) {
     }
 }
 
-function renderServer(game){
-    game.forEach(function(item) {
+function renderServer(gameArray){
+    gameArray.forEach(function(item) {
         box = document.querySelector(`#${item}`)
         box.innerText = "x";
     });
-    if(checkWinner(game)){
+
+    game.clear();
+    gameArray.forEach(function(item) {
+        game.add(item);
+    });
+
+    if(checkWinner()){
         result.innerText="Winner player: " + player;
     }
 }
