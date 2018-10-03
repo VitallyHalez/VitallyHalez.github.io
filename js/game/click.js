@@ -31,7 +31,7 @@ function render(game){
     game.forEach( function(item) {
         box = document.querySelector(`#${item}`)
         box.innerText = "x";
-        socket.send(JSON.stringify({game: game, method:"render"}))
+        socket.send(JSON.stringify({game: JSON.stringify(game), method:"render"}))
     });
 }
 
