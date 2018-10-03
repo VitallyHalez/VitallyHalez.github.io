@@ -1,4 +1,4 @@
-restart.addEventListener('click', function(){
+restartBtn.addEventListener('click', function(){
     restartGame(); 
 })
 

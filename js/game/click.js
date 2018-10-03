@@ -40,13 +40,13 @@ var socket = new WebSocket("wss://node2.wsninja.io");
 
 // Connection opened, now send GUID to autenticate with server.
 socket.addEventListener('open', function(event) {
-  socket.send(JSON.stringify({ guid: "3b67a2fa-0dfa-4de5-b597-7edddbfa4a9f" }));
+    socket.send(JSON.stringify({ guid: "3b67a2fa-0dfa-4de5-b597-7edddbfa4a9f" }));
 });
 
 var handleMessage; // WebSocket message handler
 // Listen for websocket messages
 socket.addEventListener('message', function(event) {
-  handleMessage(JSON.parse(event.data));
+    handleMessage(JSON.parse(event.data));
 });
 
 function restart(){
@@ -60,9 +60,9 @@ function restartGame() {
 
 function handleMessage(message) {
     if (message.method === "restart") {
-      restart();
+        restart();
     }
     if (message.method === "render") {
-      render();
+        render();
     }
-  }
+}
