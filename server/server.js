@@ -21,6 +21,13 @@ function handleMessage(message) {
     }
 
     if (message.method === "render") {
-        render(game);
+        renderServer(JSON.parse(message.game));
     }
+}
+
+function renderServer(game){
+    game.forEach(function(item) {
+        box = document.querySelector(`#${item}`)
+        box.innerText = "x";
+    });
 }
