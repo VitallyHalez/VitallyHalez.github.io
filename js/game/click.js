@@ -5,8 +5,6 @@ document.addEventListener("click", function(event) {
     if (event.target.classList.contains("box")) {
         game.add(event.target.id);
         
-        
-
         render(game);
         
         temp.innerText += "Clicked " + player + ":" + event.target.id + "\n";
@@ -32,7 +30,6 @@ function render(game){
         box = document.querySelector(`#${item}`)
         box.innerText = "x";
     });
-    myArr = Array.from(game)
     
-    socket.send(JSON.stringify({game: JSON.stringify(myArr), method:'render'}))
+    socket.send(JSON.stringify({game: JSON.stringify(Array.from(game)), method:'render'}))
 }
