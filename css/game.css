@@ -1,16 +1,16 @@
 #field {
   display: grid;
-  margin-top: 1em;
+  margin-top: 1vw;
   grid-template-columns: repeat(5, 1fr);
-  grid-gap: 1em;
-  grid-auto-rows: 100px;
+  grid-gap: 1vw;
+  grid-auto-rows: 7vw;
   user-select: none;
 }
 #temp {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
-  grid-gap: 1em;
-  margin-top: 1em;
+  grid-gap: 1vw;
+  margin-top: 1vw;
   user-select: none;
 }
 .box {
