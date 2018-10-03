@@ -1,3 +1,3 @@
 enter.addEventListener('click', function(){
-    location.href="index.html"; 
+    location.href="game.html"; 
 })
