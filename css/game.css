@@ -1,9 +1,11 @@
 #field {
   display: grid;
+  width: 45vw;
+  height: 45vw;
   margin-top: 1vw;
   grid-template-columns: repeat(5, 1fr);
   grid-gap: 1vw;
-  grid-auto-rows: 7vw;
+  grid-auto-rows: 8vw;
   user-select: none;
 }
 #temp {
