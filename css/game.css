@@ -1,24 +1,46 @@
-#field {
-  display: grid;
-  width: 45vw;
-  height: 45vw;
-  margin-top: 1vw;
-  grid-template-columns: repeat(5, 1fr);
-  grid-gap: 1vw;
-  grid-auto-rows: 8vw;
-  user-select: none;
+@media only screen and (min-width: 480px) {
+ 
+/* Здесь стили более разумных, но все еще мобильных устройств. Android, iPhone  и так далее. */
+  #field {
+    display: grid;
+    width: 45vw;
+    height: 45vw;
+    margin-top: 1vw;
+    grid-template-columns: repeat(5, 1fr);
+    grid-gap: 1vw;
+    grid-auto-rows: 8vw;
+    user-select: none;
+  }
+  .box {
+    border: 1px solid grey;
+    border-radius: 5px;
+    text-align: center;
+    color: rgb(1, 59, 146);
+    font-size: 4vw;
+  }
+  #temp {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 1vw;
+    margin-top: 1vw;
+    user-select: none;
+  }
 }
-#temp {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-gap: 1vw;
-  margin-top: 1vw;
-  user-select: none;
+ 
+@media only screen and (min-width: 768px) {
+ 
+/* Планшеты в режиме portrait. */
+ 
 }
-.box {
-  border: 1px solid grey;
-  border-radius: 5px;
-  text-align: center;
-  color: rgb(1, 59, 146);
-  font-size: 4vw;
+ 
+@media only screen and (min-width: 992px) {
+ 
+/* Планшеты в режиме landscape, нетбуки, ноутбуки, десктоп. */
+ 
+}
+ 
+@media only screen and (min-width: 1382px) {
+ 
+/* Десктоп с большими разрешениями, телевизоры. */
+ 
 }
