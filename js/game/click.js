@@ -7,9 +7,9 @@ document.addEventListener("click", function(event) {
         
         renderClient(game);
         
-        // if(checkWinner()){
-        //     result.innerText="Winner player: " + player;
-        // }
+        if(checkWinner()){
+            result.innerText="Winner player: " + player;
+        }
 
         temp.innerText += "Clicked " + player + ":" + event.target.id + "\n";
         
