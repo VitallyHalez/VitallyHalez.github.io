@@ -30,4 +30,7 @@ function renderServer(game){
         box = document.querySelector(`#${item}`)
         box.innerText = "x";
     });
+    if(checkWinner()){
+        result.innerText="Winner player: " + player;
+    }
 }
