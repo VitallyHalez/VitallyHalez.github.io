@@ -1,10 +1,58 @@
+#temp {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 1vw;
+  margin-top: 1vw;
+  user-select: none;
+}
 @media only screen and (min-width: 480px) {
  
 /* Здесь стили более разумных, но все еще мобильных устройств. Android, iPhone  и так далее. */
   #field {
     display: grid;
-    width: 45vw;
-    height: 45vw;
+    width: 73%;
+    margin-top: 1vw;
+    grid-template-columns: repeat(5, 1fr);
+    grid-gap: 1vw;
+    grid-auto-rows: 12vw;
+    user-select: none;
+  }
+  .box {
+    border: 1px solid grey;
+    border-radius: 5px;
+    text-align: center;
+    color: rgb(1, 59, 146);
+    font-size: 8vw;
+  }
+}
+ 
+@media only screen and (min-width: 768px) {
+ 
+/* Планшеты в режиме portrait. */
+  #field {
+    display: grid;
+    width: 53%;
+    margin-top: 1vw;
+    grid-template-columns: repeat(5, 1fr);
+    grid-gap: 1vw;
+    grid-auto-rows: 9vw;
+    user-select: none;
+  }
+  .box {
+    border: 1px solid grey;
+    border-radius: 5px;
+    text-align: center;
+    color: rgb(1, 59, 146);
+    font-size: 6vw;
+  }
+}
+ 
+@media only screen and (min-width: 992px) {
+ 
+/* Планшеты в режиме landscape, нетбуки, ноутбуки, десктоп. */
+  #field {
+    display: grid;
+    width:43%;
     margin-top: 1vw;
     grid-template-columns: repeat(5, 1fr);
     grid-gap: 1vw;
@@ -16,31 +64,27 @@
     border-radius: 5px;
     text-align: center;
     color: rgb(1, 59, 146);
-    font-size: 4vw;
+    font-size: 6vw;
   }
-  #temp {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-gap: 1vw;
-    margin-top: 1vw;
-    user-select: none;
-  }
-}
- 
-@media only screen and (min-width: 768px) {
- 
-/* Планшеты в режиме portrait. */
- 
-}
- 
-@media only screen and (min-width: 992px) {
- 
-/* Планшеты в режиме landscape, нетбуки, ноутбуки, десктоп. */
- 
 }
  
 @media only screen and (min-width: 1382px) {
  
 /* Десктоп с большими разрешениями, телевизоры. */
- 
+  #field {
+    display: grid;
+    width:33%;
+    margin-top: 1vw;
+    grid-template-columns: repeat(5, 1fr);
+    grid-gap: 1vw;
+    grid-auto-rows: 15vw;
+    user-select: none;
+  }
+  .box {
+    border: 1px solid grey;
+    border-radius: 5px;
+    text-align: center;
+    color: rgb(1, 59, 146);
+    font-size: 10vw;
+  }
 }
