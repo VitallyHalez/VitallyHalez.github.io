@@ -10,18 +10,6 @@ document.addEventListener("click", function(event) {
         if(checkWinner()){
             result.innerText="Winner player: " + player;
         }
-
-        temp.innerText += "Clicked " + player + ":" + event.target.id + "\n";
-        
-        if (player == 1) {
-            player = 2;
-            return;
-        }
-
-        if (player == 2) {
-            player = 1;
-            return;
-        }
     }
 });
 
