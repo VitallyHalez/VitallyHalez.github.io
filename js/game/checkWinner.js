@@ -64,16 +64,16 @@ function checkWinner(){
                     boxS.classList.add('bg-info');
                 }
             }
-            if (LeftDiagonal == 5) {
-                for(let ind = 0; ind<5; ind++){
-                    let boxS = document.querySelector(`#${winnerCollection.LeftDiagonal[ind]}`)
-                    boxS.classList.add('bg-info')
+            if (LeftDiagonal == 5){
+                for (let ind = 0 ; ind<5; ind++){
+                    let boxS = document.querySelector(`#${winnerCollection.LeftDiagonal[ind]}`) 
+                    boxS.classList.add('bg-info');
                 }
             }
-            if (RightDiagonal == 5) {
-                for(let ind = 0; ind<5; ind++){
-                    let boxS = document.querySelector(`#${winnerCollection.RightDiagonal[ind]}`)
-                    boxS.classList.add('bg-info')
+            if (RightDiagonal == 5){
+                for (let ind = 0 ; ind<5; ind++){
+                    let boxS = document.querySelector(`#${winnerCollection.RightDiagonal[ind]}`) 
+                    boxS.classList.add('bg-info');
                 }
             }
 

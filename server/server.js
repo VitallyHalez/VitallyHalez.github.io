@@ -12,12 +12,12 @@ socket.addEventListener('message', function(event) {
 });
 
 function restartGame() {
-    location.href = "game.html";
     socket.send(JSON.stringify( { method: "restart" } ));
+    location.href = "game.html";
 }
 
 function handleMessage(message) {
-    if (message.method === "restart") {
+    if (message.method === "restart" || message.method === "closed") {
         location.href = "game.html";
     }
 
