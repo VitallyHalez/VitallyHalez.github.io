@@ -1,4 +1,3 @@
-let player = 1;
 let game = new Set();
 
 document.addEventListener("click", function(event) {
@@ -8,7 +7,7 @@ document.addEventListener("click", function(event) {
         renderClient(game);
         
         if(checkWinner()){
-            result.innerText="Winner player: " + player;
+            result.innerText="YOU WINNER";
         }
     }
 });
