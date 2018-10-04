@@ -28,7 +28,7 @@ function handleMessage(message) {
 function renderServer(gameArray){
     gameArray.forEach(function(item) {
         box = document.querySelector(`#${item}`)
-        box.innerText = "x";
+        box.style.backgroundColor="rgb(156, 145, 46)";
     });
 
     game.clear();
