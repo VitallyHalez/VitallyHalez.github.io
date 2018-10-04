@@ -2,7 +2,8 @@ enter.addEventListener('click', function(){
     location.href="game.html"; 
 });
 
-find.addEventListener('click', function(){
+let btnfind = document.querySelector("#find");
+btnfind.addEventListener('click', function(){
     createRoom(nickname.value);
 });
 // enter.addEventListener('click', function(){
