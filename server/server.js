@@ -7,6 +7,7 @@ socket.addEventListener('open', function(event) {
 });
 
 socket.addEventListener('message', function(event) {
+    
     handleMessage(JSON.parse(event.data));
 });
 
@@ -16,6 +17,11 @@ function restartGame() {
 }
 
 function handleMessage(message) {
+    
+    if (message.accepted === true) {
+        socket.send(JSON.stringify({game: JSON.stringify(Array.from(game)), method:'render'}))
+    } 
+
     if (message.method === "restart" || message.method === "closed") {
         location.href = "game.html";
     }
