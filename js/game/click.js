@@ -16,7 +16,7 @@ document.addEventListener("click", function(event) {
 function renderClient(game){
     game.forEach(function(item) {
         box = document.querySelector(`#${item}`)
-        box.style.backgroundColor="rgb(156, 145, 46)";
+        box.style.backgroundColor="rgb(211, 193, 32)";
     });
     
     socket.send(JSON.stringify({game: JSON.stringify(Array.from(game)), method:'render'}))

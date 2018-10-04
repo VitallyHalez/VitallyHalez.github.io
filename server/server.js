@@ -40,8 +40,8 @@ function handleMessage(message) {
 function renderServer(gameArray){
     gameArray.forEach(function(item) {
         box = document.querySelector(`#${item}`)
-        box.style.backgroundColor="rgb(156, 145, 46)";
-Z    });
+        box.style.backgroundColor="rgb(211, 193, 32)";
+    });
 
     game.clear();
 
