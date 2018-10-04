@@ -10,9 +10,14 @@ socket.addEventListener('message', function(event) {
     handleMessage(JSON.parse(event.data));
 });
 
-socket.addEventListener('close', function(event) {
-    alert('closed');
-});
+socket.onclose = function(event) {
+    if (event.wasClean) {
+      alert('Соединение закрыто чисто');
+    } else {
+      alert('Обрыв соединения'); // например, "убит" процесс сервера
+    }
+    alert('Код: ' + event.code + ' причина: ' + event.reason);
+};
 
 function restartGame() {
     socket.send(JSON.stringify( { method: "restart" } ));
