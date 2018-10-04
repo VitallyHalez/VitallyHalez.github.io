@@ -10,6 +10,10 @@ socket.addEventListener('message', function(event) {
     handleMessage(JSON.parse(event.data));
 });
 
+socket.addEventListener('close', function(event) {
+    restartGame();
+});
+
 function restartGame() {
     location.href = "game.html";
     socket.send(JSON.stringify( { method: "restart" } ));
