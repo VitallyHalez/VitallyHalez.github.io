@@ -11,7 +11,7 @@ socket.addEventListener('message', function(event) {
 });
 
 socket.addEventListener('close', function(event) {
-    restartGame();
+    alert('closed');
 });
 
 function restartGame() {
