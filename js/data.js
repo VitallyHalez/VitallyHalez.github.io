@@ -12,9 +12,8 @@ let Player = {
 let PlayersSessions = new Set();
 
 function createRoom(nick){
-    player = new Player();
-    player.nick = nick;
-    player.guid = GUID[0];
+    Player.nick = nick;
+    Player.guid = GUID[0];
       
-    PlayersSessions.add(player);
+    PlayersSessions.add(Player);
 }
