@@ -15,8 +15,8 @@ socket.addEventListener('close', function(event) {
 });
 
 function restartGame() {
-    location.href = "game.html";
     socket.send(JSON.stringify( { method: "restart" } ));
+    location.href = "game.html";
 }
 
 function handleMessage(message) {
