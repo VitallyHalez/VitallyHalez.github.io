@@ -10,22 +10,13 @@ socket.addEventListener('message', function(event) {
     handleMessage(JSON.parse(event.data));
 });
 
-socket.onclose = function(event) {
-    if (event.wasClean) {
-      alert('Соединение закрыто чисто');
-    } else {
-      alert('Обрыв соединения'); // например, "убит" процесс сервера
-    }
-    alert('Код: ' + event.code + ' причина: ' + event.reason);
-};
-
 function restartGame() {
     socket.send(JSON.stringify( { method: "restart" } ));
     location.href = "game.html";
 }
 
 function handleMessage(message) {
-    if (message.method === "restart") {
+    if (message.method === "restart" || message.method === "closed") {
         location.href = "game.html";
     }
 
