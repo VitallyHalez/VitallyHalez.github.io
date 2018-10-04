@@ -1,6 +1,13 @@
 var socket = new WebSocket("wss://node2.wsninja.io");
 
 var handleMessage; 
+let Player = {
+    nick:'',
+    guid:''
+}
+let Players = []
+players[0].nick = 'Vetal'
+players[0].guid = '3b67a2fa-0dfa-4de5-b597-7edddbfa4a9f'
 
 socket.addEventListener('open', function(event) {
     socket.send(JSON.stringify({ guid: "3b67a2fa-0dfa-4de5-b597-7edddbfa4a88" }));//9f 3b67a2fa-0dfa-4de5-b597-7edddbfa4a88
@@ -34,7 +41,7 @@ function renderServer(gameArray){
     gameArray.forEach(function(item) {
         box = document.querySelector(`#${item}`)
         box.style.backgroundColor="rgb(156, 145, 46)";
-    });
+Z    });
 
     game.clear();
 
