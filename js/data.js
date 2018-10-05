@@ -13,19 +13,19 @@ let GUID = [
     "e70a4971-d57b-4d6e-b1d7-7d32227ffd45"
 ];
 
-function DataGet(key){
-    return localStorage.getItem(key);
-}
+// function DataGet(key){
+//     return localStorage.getItem(key);
+// }
 
-function DataSet(key, value){
-    localStorage.setItem(key, value)
-}
+// function DataSet(key, value){
+//     localStorage.setItem(key, value)
+// }
 
-function DataClear(key){
-    for (var i = 0; i < arguments.length; i++) {
-        localStorage.clear(arguments[i]);
-    }
-}
+// function DataClear(key){
+//     for (var i = 0; i < arguments.length; i++) {
+//         localStorage.clear(arguments[i]);
+//     }
+// }
 
 // let PlayersSessions = new Set();
 // let idcount=0;

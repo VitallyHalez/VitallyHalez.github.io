@@ -20,10 +20,10 @@ function handleMessage(message) {
         renderServer(JSON.parse(message.game));
     }
     
-    if (message.method === "connect") {
-        console.log('connecteed');
-        startGameServer(JSON.parse(message.Player));
-    }
+    // if (message.method === "connect") {
+    //     console.log('connecteed');
+    //     startGameServer(JSON.parse(message.Player));
+    // }
 }
 
 function restartGame() {
