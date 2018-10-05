@@ -17,9 +17,9 @@ function handleMessage(message) {
     }
     
     if (message.method === "render") {
-        renderServer(JSON.parse(message.game));
         $(field).unbind('click');
         result.innerText="ВАШ ХОД"
+        renderServer(JSON.parse(message.game));
     }
     
     // if (message.method === "connect") {
@@ -28,29 +28,27 @@ function handleMessage(message) {
     // }
 }
 
-function restartGame() {
-    socket.send(JSON.stringify( { method: "restart" } ));
-    location.href = "game.html";
-}
 
 function renderServer(gameArray){
     gameArray.forEach(function(item) {
         box = document.querySelector(`#${item}`)
         box.style.backgroundColor="rgb(211, 193, 32)";
     });
-
-    game.clear();
     
     gameArray.forEach(function(item) {
         game.add(item);
     });
     
-    if(checkWinner()){
-        result.innerText="Winner player: " + player;
+    if(checkWinner(game)){
+        result.innerText="Победил опонент";
     }
         
 }
 
+function restartGame() {
+    socket.send(JSON.stringify( { method: "restart" } ));
+    location.href = "game.html";
+}
 // let Room = {
 //     guid:"empty",
 //     players:[]

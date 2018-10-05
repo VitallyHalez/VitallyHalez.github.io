@@ -6,8 +6,8 @@ document.addEventListener("click", function(event) {
 
         renderClient(game);
 
-        if(checkWinner()){
-            result.innerText="YOU WINNER";
+        if(checkWinner(game)){
+            result.innerText="Вы победили поздравляем";
         }
     }
 });
