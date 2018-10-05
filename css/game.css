@@ -16,6 +16,9 @@
   /* Чисто для айфонов */
   cursor: pointer;
 }
+.box:hover {
+  background: #786b59; /* Цвет фона под ссылкой */ 
+}
 .btn{
   margin:auto
 }
