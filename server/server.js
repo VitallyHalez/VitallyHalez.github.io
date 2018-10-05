@@ -49,23 +49,23 @@ function renderServer(gameArray){
         
 }
 
-let Room = {
-    guid:"empty",
-    players:[]
-}       
+// let Room = {
+//     guid:"empty",
+//     players:[]
+// }       
 
-function startGameServer(Player){
-    if (Room.guid=="empty"){
-        Room.guid = GUID[0];
-        Room.players.push(Player); 
-        alert('player 1 added')
-    }
-    else if (Room.players.length!=2){
-        Room.players.push(Player); 
-        alert(`player 2 added`)
-    }
-    if (Room.players.length==2){
-        alert('GOGOGO');
-    }
+// function startGameServer(Player){
+//     if (Room.guid=="empty"){
+//         Room.guid = GUID[0];
+//         Room.players.push(Player); 
+//         alert('player 1 added')
+//     }
+//     else if (Room.players.length!=2){
+//         Room.players.push(Player); 
+//         alert(`player 2 added`)
+//     }
+//     if (Room.players.length==2){
+//         alert('GOGOGO');
+//     }
         
-}
+// }
