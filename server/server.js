@@ -17,10 +17,14 @@ function handleMessage(message) {
     }
     
     if (message.method === "render") {
-        $(field).unbind('click');
-        result.innerText="ВАШ ХОД"
         renderServer(JSON.parse(message.game));
     }
+
+    // if(message.accepted === true){
+    //     console.log('Privet');
+    //     game.clear();
+    //     socket.send(JSON.stringify({game: JSON.stringify(Array.from(game)), method:'render'}))
+    // }
     
     // if (message.method === "connect") {
     //     console.log('connecteed');
@@ -41,6 +45,10 @@ function renderServer(gameArray){
     
     if(checkWinner(game)){
         result.innerText="Победил опонент";
+    }
+    else{
+        $(field).unbind('click');
+        result.innerText="ВАШ ХОД"
     }
         
 }
