@@ -18,6 +18,8 @@ function handleMessage(message) {
     
     if (message.method === "render") {
         renderServer(JSON.parse(message.game));
+        $(field).unbind('click');
+        result.innerText="ВАШ ХОД"
     }
     
     // if (message.method === "connect") {
