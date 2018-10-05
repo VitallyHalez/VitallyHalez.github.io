@@ -12,12 +12,20 @@
 </head>
 
 <body style="background-color: rgb(71, 71, 71)">
-  <nav class="navbar fixed-bottom navbar-light" style="background-color: #292929;">
-    <button id="menuBtn" class="btn btn-warning btn-lg">MENU</button>
-    <button id="restartBtn" class="btn btn-outline-warning btn-lg">RESTART</button>
-    
-    <button id="Redo" class="btn btn-outline-danger btn-lg">REDO</button>
-    <button id="Undo" class="btn btn-outline-success btn-lg">UNDO</button>
+  
+  <nav class="navbar navbar-light navbar-expand-lg fixed-bottom" style="background-color: #292929;">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+  
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto" style="width: 100%">
+        <button id="menuBtn" class="btn btn-warning btn-lg">MENU</button>
+        <button id="restartBtn" class="btn btn-outline-warning btn-lg">RESTART</button>
+        <button id="Redo" class="btn btn-outline-danger btn-lg disabled">REDO</button>
+        <button id="Undo" class="btn btn-outline-success btn-lg disabled">UNDO</button>
+      </ul>
+    </div>
   </nav>
   <div class="text-center">
     <h3 id="result" class="text-warning"></h3>
@@ -49,7 +57,7 @@
     <div id="c4-3" class="box"></div>
     <div id="c4-4" class="box"></div>
   </div>
-
+  <script src="js/data.js"></script>
   <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
     crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
@@ -59,7 +67,7 @@
   <script src="js/game/checkWinner.js"></script>
   <script src="js/game/click.js"></script>
   <script src="js/game/UI.js"></script>
-  <script src="server/server.js"></script>
+  <script src="server/client.js"></script>
 </body>
 
 </html>
