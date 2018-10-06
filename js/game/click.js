@@ -2,6 +2,8 @@ let game = new Set();
 
 document.addEventListener("click", function(event) {
     if (event.target.classList.contains("box")) {
+        if(game.has(event.target.id))
+            return false;
         game.add(event.target.id);
 
         renderClient(game);

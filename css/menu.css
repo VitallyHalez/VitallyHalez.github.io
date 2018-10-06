@@ -1,6 +1,7 @@
 #logo{
     font-size: 10vw;
     font-display: bold;
+    user-select: none;
 }
 .btn{
   margin:auto

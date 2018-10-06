@@ -20,11 +20,11 @@ function handleMessage(message) {
         renderServer(JSON.parse(message.game));
     }
 
-    // if(message.accepted === true){
-    //     console.log('Privet');
-    //     game.clear();
-    //     socket.send(JSON.stringify({game: JSON.stringify(Array.from(game)), method:'render'}))
-    // }
+    if(message.accepted === true){
+        console.log('Privet');
+        // game.clear();
+        // socket.send(JSON.stringify({game: JSON.stringify(Array.from(game)), method:'render'}))
+    }
     
     // if (message.method === "connect") {
     //     console.log('connecteed');
