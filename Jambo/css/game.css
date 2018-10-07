@@ -1,0 +1,72 @@
+#field {
+    display: grid;
+    width: 100%;
+    margin-top: 1vw;
+    grid-template-columns: repeat(5, 1fr);
+    grid-gap: 1vw;
+    grid-auto-rows: 16vw;
+    user-select: none;
+  }
+  .box {
+    border: 1px solid rgb(156, 145, 46);
+    border-radius: 5px;
+    text-align: center;
+    color: rgb(156, 145, 46);
+    font-size: 10vw;
+    /* Чисто для айфонов */
+    cursor: pointer;
+  }
+  .box:hover {
+    background: #786b59; /* Цвет фона под ссылкой */ 
+  }
+  .btn{
+    margin:auto
+  }
+  
+  @media only screen and (min-width: 480px) {
+   
+  /* Здесь стили более разумных, но все еще мобильных устройств. Android, iPhone  и так далее. */
+    #field {
+      width: 73%;
+      grid-auto-rows: 12vw;
+    }
+    .box {
+      font-size: 8vw;
+    }
+  }
+   
+  @media only screen and (min-width: 768px) {
+   
+  /* Планшеты в режиме portrait. */
+    #field {
+      width: 53%;
+      grid-auto-rows: 9vw;
+    }
+    .box {
+      font-size: 6vw;
+    }
+  }
+   
+  @media only screen and (min-width: 992px) {
+   
+  /* Планшеты в режиме landscape, нетбуки, ноутбуки, десктоп. */
+    #field {
+      width:43%;
+      grid-auto-rows: 7vw;
+    }
+    .box {
+      font-size: 4vw; 
+    }
+  }
+   
+  @media only screen and (min-width: 1382px) {
+   
+  /* Десктоп с большими разрешениями, телевизоры. */
+    #field {
+      width:70%;
+      grid-auto-rows: 15vw;
+    }
+    .box {
+      font-size: 10vw;
+    }
+  }
