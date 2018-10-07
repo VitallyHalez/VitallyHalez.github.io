@@ -1,4 +1,5 @@
-var socket = new WebSocket("wss://vitallyhalez.github.io:8081/Jambo/server");
+var socket = new WebSocket(window.location.host);
+// var socket = new WebSocket("wss://vitallyhalez.github.io:8081/Jambo/server");
 
 socket.onmessage = function(event) {
     handleMessage(JSON.parse(event.data));
