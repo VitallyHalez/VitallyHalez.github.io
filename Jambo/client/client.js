@@ -4,7 +4,7 @@
 // var host = location.origin.replace(/^http/, 'ws')
 //var host = location.origin.replace('wss://jamboapp.herokuapp.com')
 
-var ws = new WebSocket('wss://jamboapp.herokuapp.com');
+var socket = new WebSocket('wss://jamboapp.herokuapp.com');
 
 ws.onmessage = function(event) {
     handleMessage(JSON.parse(event.data));
