@@ -10,7 +10,6 @@ function handleMessage(message) {
     }
     
     if (message.method === "render") {
-        console.log(message.msg)
         renderClient(message.game);
     }
 }
