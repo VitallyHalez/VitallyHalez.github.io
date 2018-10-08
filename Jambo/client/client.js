@@ -9,7 +9,7 @@ function handleMessage(message) {
         location.href = "game.html";
     }
     
-    if (message.method === "render") {
+    if (message.method === "renderonclient") {
         renderClient(message.game);
     }
 }
