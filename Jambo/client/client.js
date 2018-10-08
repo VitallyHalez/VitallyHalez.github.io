@@ -1,7 +1,10 @@
-var socket = new WebSocket(window.location.host);
+// var socket = new WebSocket("wss://jamboapp.herokuapp.com:8081");
 // var socket = new WebSocket("wss://vitallyhalez.github.io:8081/Jambo/server");
 
-socket.onmessage = function(event) {
+var host = location.origin.replace(/^http/, 'ws')
+var ws = new WebSocket(host);
+
+ws.onmessage = function(event) {
     handleMessage(JSON.parse(event.data));
 };
 
