@@ -6,7 +6,7 @@
 
 var socket = new WebSocket('wss://jamboapp.herokuapp.com');
 
-ws.onmessage = function(event) {
+socket.onmessage = function(event) {
     handleMessage(JSON.parse(event.data));
 };
 
