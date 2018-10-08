@@ -1,6 +1,7 @@
 var socket = new WebSocket('wss://jamboapp.herokuapp.com');
 
 socket.onmessage = function(event) {
+    console.log(event)
     handleMessage(JSON.parse(event.data));
 };
 
@@ -11,6 +12,7 @@ function handleMessage(message) {
     
     if (message.method === "renderonclient") {
         renderClient(message.game);
+        console.log("Принял гейм сет с сервер");
     }
 }
 
