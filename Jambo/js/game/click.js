@@ -9,6 +9,8 @@ document.addEventListener("click", function(event) {
 
         // if(checkWinner(game)){
         //     result.innerText="Вы победили поздравляем";
+        // $(field).bind('click',function(){return false;});
+
         // }
     }
 });
@@ -23,6 +25,5 @@ function clickRender(game){
     result.innerText="ХОДИТ ОПОНЕНТ"
 
     socket.send(JSON.stringify({game: Array.from(game), method:'renderonserver'}))
-    console.log("Отправил гейм сет на сервер");
 }
 

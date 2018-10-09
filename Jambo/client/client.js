@@ -1,7 +1,6 @@
 var socket = new WebSocket('wss://jamboapp.herokuapp.com');
 let game = new Set();
 socket.onmessage = function(event) {
-    console.log(event)
     handleMessage(JSON.parse(event.data));
 };
 
@@ -22,10 +21,16 @@ function handleMessage(message) {
     
     if (message.method === "renderonclient") {
         renderClient(message.game);
-        if(message.isWin){
-            console.log('PE-RE-MO-GA')
-        }
-        console.log("Принял гейм сет с сервер");
+    }
+
+    if (message.method === "Winner"){
+        result.innerText="Вы победили поздравляем";
+        $(field).bind('click',function(){return false;});
+    }
+
+    if (message.method === "Lose"){
+        result.innerText="К сожалению вы проиграли";
+        $(field).bind('click',function(){return false;});
     }
 }
 
