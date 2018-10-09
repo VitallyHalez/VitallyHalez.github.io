@@ -11,3 +11,8 @@ menuBtn.addEventListener('click', function(){
 window.addEventListener("beforeunload", function (event) {   
     //socket.send(JSON.stringify({method:'closed'}))
 });
+
+document.addEventListener('DOMContentLoaded', function(){
+    $(field).bind('click',function(){return false;});
+    result.innerText="СОЕДЕНЕНИЕ"
+})

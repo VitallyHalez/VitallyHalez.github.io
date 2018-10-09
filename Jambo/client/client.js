@@ -1,5 +1,5 @@
 var socket = new WebSocket('wss://jamboapp.herokuapp.com');
-
+let game = new Set();
 socket.onmessage = function(event) {
     console.log(event)
     handleMessage(JSON.parse(event.data));
@@ -9,8 +9,9 @@ socket.onopen = function(event) {
     $(field).unbind('click');
     result.innerText="СОЕДЕНЕНО";
 };
+
 socket.onerror=function(event) {
-    alert(event);
+    alert(event.data);
 };
 
 
@@ -25,12 +26,13 @@ function handleMessage(message) {
     }
 }
 
-function renderClient(game){
-    game.forEach(function(item) {
+function renderClient(gameArray){
+    gameArray.forEach(function(item) {
         box = document.querySelector(`#${item}`)
         box.style.backgroundColor="rgb(211, 193, 32)";
+        game.add(item);
     });
-    
+
     $(field).unbind('click');
     result.innerText="ВАШ ХОД";
 }

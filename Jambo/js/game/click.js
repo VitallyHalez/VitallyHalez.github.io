@@ -1,5 +1,3 @@
-let game = new Set();
-
 document.addEventListener("click", function(event) {
     if (event.target.classList.contains("box")) {
         if(game.has(event.target.id))
@@ -27,7 +25,4 @@ function clickRender(game){
     socket.send(JSON.stringify({game: Array.from(game), method:'renderonserver'}))
     console.log("Отправил гейм сет на сервер");
 }
-document.addEventListener('DOMContentLoaded', function(){
-    $(field).bind('click',function(){return false;});
-    result.innerText="СОЕДЕНЕНИЕ"
-})
+
