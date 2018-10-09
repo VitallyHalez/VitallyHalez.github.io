@@ -22,6 +22,9 @@ function handleMessage(message) {
     
     if (message.method === "renderonclient") {
         renderClient(message.game);
+        if(message.isWin){
+            console.log('PE-RE-MO-GA')
+        }
         console.log("Принял гейм сет с сервер");
     }
 }
