@@ -11,7 +11,7 @@ socket.onopen = function(event) {
 };
 
 socket.onerror=function(event) {
-    alert(event.data);
+    console.log(event)
 };
 
 
