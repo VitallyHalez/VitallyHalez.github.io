@@ -6,7 +6,11 @@ socket.onmessage = function(event) {
 };
 
 socket.onopen = function(event) {
-    alert('Connect');
+    $(field).unbind('click');
+    result.innerText="СОЕДЕНЕНО";
+};
+socket.onerror=function(event) {
+    alert(event);
 };
 
 

@@ -23,6 +23,11 @@ function clickRender(game){
 
     $(field).bind('click',function(){return false;});
     result.innerText="ХОДИТ ОПОНЕНТ"
+
     socket.send(JSON.stringify({game: Array.from(game), method:'renderonserver'}))
     console.log("Отправил гейм сет на сервер");
 }
+document.addEventListener('DOMContentLoaded', function(){
+    $(field).bind('click',function(){return false;});
+    result.innerText="СОЕДЕНЕНИЕ"
+})
