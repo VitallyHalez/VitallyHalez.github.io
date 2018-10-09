@@ -12,8 +12,12 @@ socket.onopen = function(event) {
 socket.onerror=function(event) {
     console.log(event)
 };
-
-
+/*
+    Для отображения победной комбинации можно создать победный сет, и отправлять его. 
+    Затем по его данным перерисовать в другой цвет победную комбинацию.
+    Для визуализации соеденения можно использовать до соеденения с бутстрапа загрузку (круг или полосу)
+    После соеденения менять ее на галочку
+*/
 function handleMessage(message) {
     if (message.method === "restart" || message.method === "closed") {
         location.href = "game.html";
