@@ -5,6 +5,11 @@ socket.onmessage = function(event) {
     handleMessage(JSON.parse(event.data));
 };
 
+socket.onopen = function(event) {
+    alert('Connect');
+};
+
+
 function handleMessage(message) {
     if (message.method === "restart" || message.method === "closed") {
         location.href = "game.html";
