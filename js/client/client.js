@@ -38,7 +38,9 @@ function handleMessage(message) {
     }
 }
 
-function renderClient(gameArray){
+function renderClient(game){
+    let gameArray = Array.from(game);
+    
     gameArray.forEach(function(item) {
         box = document.querySelector(`#${item}`)
         box.style.backgroundColor="rgb(211, 193, 32)";
