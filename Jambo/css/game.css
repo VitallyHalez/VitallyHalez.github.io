@@ -22,7 +22,7 @@
   .btn{
     margin:auto
   }
-  
+ 
   @media only screen and (min-width: 480px) {
    
   /* Здесь стили более разумных, но все еще мобильных устройств. Android, iPhone  и так далее. */

@@ -6,7 +6,7 @@ socket.onmessage = function(event) {
 
 socket.onopen = function(event) {
     $(field).unbind('click');
-    result.innerText="СОЕДЕНЕНО";
+    progress.hidden= true
 };
 
 socket.onerror=function(event) {
@@ -15,8 +15,6 @@ socket.onerror=function(event) {
 /*
     Для отображения победной комбинации можно создать победный сет, и отправлять его. 
     Затем по его данным перерисовать в другой цвет победную комбинацию.
-    Для визуализации соеденения можно использовать до соеденения с бутстрапа загрузку (круг или полосу)
-    После соеденения менять ее на галочку
 */
 function handleMessage(message) {
     if (message.method === "restart" || message.method === "closed") {

@@ -14,5 +14,4 @@ window.addEventListener("beforeunload", function (event) {
 
 document.addEventListener('DOMContentLoaded', function(){
     $(field).bind('click',function(){return false;});
-    result.innerText="СОЕДЕНЕНИЕ"
 })
