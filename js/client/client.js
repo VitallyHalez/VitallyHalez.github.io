@@ -1,5 +1,7 @@
 var socket = new WebSocket('wss://jamboapp.herokuapp.com');
+
 let game = new Set();
+
 socket.onmessage = function(event) {
     handleMessage(JSON.parse(event.data));
 };
