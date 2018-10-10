@@ -19,7 +19,7 @@ socket.onerror=function(event) {
     Затем по его данным перерисовать в другой цвет победную комбинацию.
 */
 function handleMessage(message) {
-    if (message.method === "restart" || message.method === "closed") {
+    if (message.method === "restart") {
         location.href = "game.html";
     }
     
