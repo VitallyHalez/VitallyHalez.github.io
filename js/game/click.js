@@ -6,12 +6,6 @@ document.addEventListener("click", function(event) {
         game.add(event.target.id);
 
         clickRender(game);
-
-        // if(checkWinner(game)){
-        //     result.innerText="Вы победили поздравляем";
-        // $(field).bind('click',function(){return false;});
-
-        // }
     }
 });
 
