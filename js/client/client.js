@@ -1,19 +1,19 @@
-var socket = new WebSocket('wss://jamboapp.herokuapp.com');
+var socket = new WebSocket('wss://jamboapp.herokuapp.com')
 
-let game = new Set();
+let game = new Set()
 
 socket.onmessage = function(event) {
     handleMessage(JSON.parse(event.data));
-};
+}
 
 socket.onopen = function(event) {
     $(field).unbind('click');
-    progress.hidden= true
-};
+    progress.hidden = true;
+}
 
 socket.onerror=function(event) {
-    console.log(event)
-};
+    console.log(event);
+}
 /*
     Для отображения победной комбинации можно создать победный сет, и отправлять его. 
     Затем по его данным перерисовать в другой цвет победную комбинацию.
@@ -40,7 +40,7 @@ function handleMessage(message) {
 
 function renderClient(gameArray){
     gameArray.forEach(function(item) {
-        box = document.querySelector(`#${item}`)
+        box = document.querySelector(`#${item}`);
         box.style.backgroundColor="rgb(211, 193, 32)";
         game.add(item);
     });

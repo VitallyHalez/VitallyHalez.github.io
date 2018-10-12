@@ -11,13 +11,13 @@ document.addEventListener("click", function(event) {
 
 function clickRender(game){
     game.forEach(function(item) {
-        box = document.querySelector(`#${item}`)
+        box = document.querySelector(`#${item}`);
         box.style.backgroundColor="rgb(211, 193, 32)";
     });
 
     $(field).bind('click',function(){return false;});
-    result.innerText="ХОДИТ ОПОНЕНТ"
+    result.innerText = "ХОДИТ ОПОНЕНТ";
 
-    socket.send(JSON.stringify({game: Array.from(game), method:'renderonserver'}))
+    socket.send(JSON.stringify({game: Array.from(game), method:'renderonserver'}));
 }
 
