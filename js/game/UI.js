@@ -15,8 +15,18 @@ document.addEventListener('DOMContentLoaded', function(){
 })
 
 function createMsg(msgText){
-    liMsg = document.createElement('li');
-    liMsg.innerText = msgText;
-	liMsg.classList = 'list-group-item bg-dark border-info'
-	return liMsg
+    li = document.createElement('li');
+    li.classList = 'list-group-item bg-dark border-info'
+    
+    small = document.createElement('small');
+    small.classList = 'text-secondary'
+    small.innerText = '14.10.2018 15:30';
+
+    p = document.createElement('p');
+    p.innerText = msgText;
+    
+    li.appendChild(small)
+    li.appendChild(p)
+    
+	return li
 }
