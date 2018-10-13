@@ -22,20 +22,21 @@ function handleMessage(message) {
     if (message.method === "restart") {
         location.href = "game.html";
     }
-    
-    if (message.method === "renderonclient") {
+    else if (message.method === "renderonclient") {
         renderClient(message.game);
     }
-
-    if (message.method === "Winner"){
+    else if (message.method === "Winner"){
         result.innerText="Вы победили поздравляем";
         $(field).bind('click',function(){return false;});
     }
-
-    if (message.method === "Lose"){
+    else if (message.method === "Lose"){
         result.innerText="К сожалению вы проиграли";
         $(field).bind('click',function(){return false;});
     }
+    else if (message.method === "msgtoclient"){
+        allmsg.innerText = message.msg;
+    }
+    else return;
 }
 
 function renderClient(gameArray){
