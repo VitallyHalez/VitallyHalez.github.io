@@ -10,6 +10,7 @@ document.addEventListener("click", function(event) {
 });
 
 msgBtn.addEventListener("click", function(event) {
+    allmsg.appendChild(createMsg(inpmsg.value));
     socket.send(JSON.stringify({msg: inpmsg.value, method:'msgtoserver'}));
 });
 

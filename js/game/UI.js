@@ -13,3 +13,10 @@ chatBtn.addEventListener('click', function(){
 document.addEventListener('DOMContentLoaded', function(){
     $(field).bind('click',function(){return false;});
 })
+
+function createMsg(msgText){
+    liMsg = document.createElement('li');
+    liMsg.innerText = msgText;
+	liMsg.classList = 'list-group-item bg-dark border-info'
+	return liMsg
+}

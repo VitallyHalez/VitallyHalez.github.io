@@ -34,7 +34,7 @@ function handleMessage(message) {
         $(field).bind('click',function(){return false;});
     }
     else if (message.method === "msgtoclient"){
-        allmsg.innerText = message.msg;
+        allmsg.appendChild(createMsg(message.msg));
     }
     else return;
 }
