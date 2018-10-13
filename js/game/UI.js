@@ -14,13 +14,13 @@ document.addEventListener('DOMContentLoaded', function(){
     $(field).bind('click',function(){return false;});
 })
 
-function createMsg(msgText){
+function createMsg(msgText, date){
     li = document.createElement('li');
     li.classList = 'list-group-item bg-dark border-info'
     
     small = document.createElement('small');
     small.classList = 'text-secondary'
-    small.innerText = '14.10.2018 15:30';
+    small.innerText = date;
 
     p = document.createElement('p');
     p.innerText = msgText;

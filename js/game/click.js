@@ -12,8 +12,20 @@ document.addEventListener("click", function(event) {
 msgBtn.addEventListener("click", function(event) {
     if(inpmsg.value=="")
         return;
-    allmsg.appendChild(createMsg(inpmsg.value));
+
+    let date = new Date();
+
+    let dateFormated = `${date.getDay()}.${date.getMonth()}.${date.getFullYear()} ${date.getHours()}:`
+    
+    if(date.getMinutes() < 10)
+        dateFormated += `0${date.getMinutes()}`
+    else
+        dateFormated += `${date.getMinutes()}`
+
+    allmsg.appendChild(createMsg(inpmsg.value, dateFormated));
+    allmsg.scrollTop = 9999;
     socket.send(JSON.stringify({msg: inpmsg.value, method:'msgtoserver'}));
+    //for test i comment this del comment if release
     inpmsg.value="";
 });
 
@@ -28,4 +40,3 @@ function clickRender(game){
 
     socket.send(JSON.stringify({game: Array.from(game), method:'renderonserver'}));
 }
-
