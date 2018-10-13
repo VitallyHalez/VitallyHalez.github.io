@@ -12,18 +12,9 @@ document.addEventListener("click", function(event) {
 msgBtn.addEventListener("click", function(event) {
     if(inpmsg.value=="")
         return;
-
-    let date = new Date();
-
-    let dateFormated = `${date.getDay()}.${date.getMonth()}.${date.getFullYear()} ${date.getHours()}:`
     
-    if(date.getMinutes() < 10)
-        dateFormated += `0${date.getMinutes()}`
-    else
-        dateFormated += `${date.getMinutes()}`
+    renderMsg(inpmsg.value);
 
-    allmsg.appendChild(createMsg(inpmsg.value, dateFormated));
-    allmsg.scrollTop = 9999;
     socket.send(JSON.stringify({msg: inpmsg.value, method:'msgtoserver'}));
     //for test i comment this del comment if release
     inpmsg.value="";

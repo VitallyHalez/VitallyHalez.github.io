@@ -15,6 +15,20 @@ document.addEventListener('DOMContentLoaded', function(){
     chat.hidden = true;
 })
 
+function renderMsg(msgText){
+    let date = new Date();
+
+    let dateFormated = `${date.getDay()}.${date.getMonth()}.${date.getFullYear()} ${date.getHours()}:`
+    
+    if(date.getMinutes() < 10)
+        dateFormated += `0${date.getMinutes()}`
+    else
+        dateFormated += `${date.getMinutes()}`
+
+    allmsg.appendChild(createMsg(msgText, dateFormated));
+    allmsg.scrollTop = 9999;
+}
+
 function createMsg(msgText, date){
     li = document.createElement('li');
     li.classList = 'list-group-item bg-dark border-info'
