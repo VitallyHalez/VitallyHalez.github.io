@@ -34,7 +34,17 @@ function handleMessage(message) {
         $(field).bind('click',function(){return false;});
     }
     else if (message.method === "msgtoclient"){
-        allmsg.appendChild(createMsg(message.msg));
+        let date = new Date();
+
+        let dateFormated = `${date.getDay()}.${date.getMonth()}.${date.getFullYear()} ${date.getHours()}:`
+        
+        if(date.getMinutes() < 10)
+            dateFormated += `0${date.getMinutes()}`
+        else
+            dateFormated += `${date.getMinutes()}`
+
+        allmsg.appendChild(createMsg(inpmsg.value, dateFormated));
+        allmsg.scrollTop = 9999;
     }
     else return;
 }
