@@ -29,6 +29,20 @@ msgBtn.addEventListener("click", function(event) {
     inpmsg.value="";
 });
 
+inpmsg.onkeyup = function (e) {
+    if (e.keyCode === 13) {
+        msgBtn.click()
+    }
+    return false;
+}
+
+window.onkeyup = function(e){
+    if (e.keyCode == 27) {
+        chat.hidden = true;
+    }
+    return false;
+}
+
 function clickRender(game){
     game.forEach(function(item) {
         box = document.querySelector(`#${item}`);

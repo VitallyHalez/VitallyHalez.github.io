@@ -12,6 +12,7 @@ chatBtn.addEventListener('click', function(){
 
 document.addEventListener('DOMContentLoaded', function(){
     $(field).bind('click',function(){return false;});
+    chat.hidden = true;
 })
 
 function createMsg(msgText, date){
