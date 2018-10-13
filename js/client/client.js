@@ -95,7 +95,6 @@ function createMsg(msgText, date){
 }
 
 function createBadge(text){
-    // <span class="badge badge-success">4</span>
     span = document.createElement('span')
     span.classList = 'badge badge-success'
     span.innerText=text;
