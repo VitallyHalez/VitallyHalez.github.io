@@ -10,7 +10,7 @@ document.addEventListener("click", function(event) {
 });
 
 msgBtn.addEventListener("click", function(event) {
-    socket.send(JSON.stringify({msg: inpmsg.innerText, method:'msgtoserver'}));
+    socket.send(JSON.stringify({msg: inpmsg.value, method:'msgtoserver'}));
 });
 
 function clickRender(game){
