@@ -14,10 +14,10 @@ socket.onopen = function(event) {
 socket.onerror=function(event) {
     console.log(event);
 }
-/*
-    Для отображения победной комбинации можно создать победный сет, и отправлять его. 
-    Затем по его данным перерисовать в другой цвет победную комбинацию.
-*/
+
+let msgCount = 1;
+let badge = createBadge(msgCount);
+
 function handleMessage(message) {
     if (message.method === "restart") {
         location.href = "game.html";
@@ -34,6 +34,19 @@ function handleMessage(message) {
         $(field).bind('click',function(){return false;});
     }
     else if (message.method === "msgtoclient"){
+        if(chat.hidden == true){
+            if(msgCount == 1){
+                chatBtn.appendChild(badge);
+            }
+            else if(msgCount<10){
+                badge.innerText=msgCount;
+            }
+            else{
+                badge.innerText='9+'
+                return
+            }
+            msgCount++
+        }
         renderMsg(message.msg);
     }
     else return;
@@ -48,4 +61,43 @@ function renderClient(gameArray){
 
     $(field).unbind('click');
     result.innerText="ВАШ ХОД";
+}
+
+function renderMsg(msgText){
+    let date = new Date();
+
+    let dateFormated = `${date.getDay()}.${date.getMonth()}.${date.getFullYear()} ${date.getHours()}:`
+    
+    if(date.getMinutes() < 10)
+        dateFormated += `0${date.getMinutes()}`
+    else
+        dateFormated += `${date.getMinutes()}`
+
+    allmsg.appendChild(createMsg(msgText, dateFormated));
+    allmsg.scrollTop = 9999;
+}
+
+function createMsg(msgText, date){
+    li = document.createElement('li');
+    li.classList = 'list-group-item bg-dark border-info'
+    
+    small = document.createElement('small');
+    small.classList = 'text-secondary'
+    small.innerText = date;
+
+    p = document.createElement('p');
+    p.innerText = msgText;
+    
+    li.appendChild(small)
+    li.appendChild(p)
+    
+	return li
+}
+
+function createBadge(text){
+    // <span class="badge badge-success">4</span>
+    span = document.createElement('span')
+    span.classList = 'badge badge-success'
+    span.innerText=text;
+    return span;
 }
