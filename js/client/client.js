@@ -48,9 +48,12 @@ function handleMessage(message) {
         }
         renderMsg(message.msg);
     }
+    else if (message.method === "IdCheck"){
+        roomId = message.roomId
+    }
     else return;
 }
-
+let roomId;
 function renderClient(gameArray){
     gameArray.forEach(function(item) {
         box = document.querySelector(`#${item}`);
