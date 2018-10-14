@@ -16,7 +16,6 @@ socket.onerror=function(event) {
 }
 
 let msgCount = 1;
-let badge = createBadge(msgCount);
 
 function handleMessage(message) {
     if (message.method === "restart") {
@@ -36,13 +35,13 @@ function handleMessage(message) {
     else if (message.method === "msgtoclient"){
         if(chat.hidden == true){
             if(msgCount == 1){
-                chatBtn.appendChild(badge);
+                chatBtn.appendChild(createBadge(msgCount));
             }
             else if(msgCount<10){
-                badge.innerText=msgCount;
+                notify.innerText=msgCount;
             }
             else{
-                badge.innerText='9+'
+                notify.innerText='9+'
                 return
             }
             msgCount++
@@ -98,5 +97,6 @@ function createBadge(text){
     span = document.createElement('span')
     span.classList = 'badge badge-success'
     span.innerText=text;
+    span.id='notify'
     return span;
 }

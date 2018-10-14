@@ -8,8 +8,9 @@ menuBtn.addEventListener('click', function(){
 
 chatBtn.addEventListener('click', function(){
     chat.hidden = !chat.hidden;
-    chatBtn.removeChild(badge);
     msgCount = 1;
+    if(chatBtn.lastChild.nodeName == 'SPAN')
+        chatBtn.lastElementChild.remove()
 })
 
 document.addEventListener('DOMContentLoaded', function(){
