@@ -1,6 +1,6 @@
 var socket = new WebSocket('wss://jamboapp.herokuapp.com')
 
-let game = new Set()
+var game = new Set()
 
 socket.onmessage = function(event) {
     handleMessage(JSON.parse(event.data));
@@ -15,7 +15,7 @@ socket.onerror=function(event) {
     console.log(event);
 }
 
-let msgCount = 1;
+var msgCount = 1;
 
 function handleMessage(message) {
     if (message.method === "restart") {
@@ -25,11 +25,11 @@ function handleMessage(message) {
         renderClient(message.game);
     }
     else if (message.method === "Winner"){
-        result.innerText="Вы победили поздравляем";
+        result.innerText = "Вы победили поздравляем";
         $(field).bind('click',function(){return false;});
     }
     else if (message.method === "Lose"){
-        result.innerText="К сожалению вы проиграли";
+        result.innerText = "К сожалению вы проиграли";
         $(field).bind('click',function(){return false;});
     }
     else if (message.method === "msgtoclient"){
@@ -37,11 +37,11 @@ function handleMessage(message) {
             if(msgCount == 1){
                 chatBtn.appendChild(createBadge(msgCount));
             }
-            else if(msgCount<10){
-                notify.innerText=msgCount;
+            else if(msgCount < 10){
+                notify.innerText = msgCount;
             }
             else{
-                notify.innerText='9+'
+                notify.innerText = '9+'
                 return
             }
             msgCount++
@@ -63,9 +63,9 @@ function renderClient(gameArray){
 }
 
 function renderMsg(msgText){
-    let date = new Date();
+    var date = new Date();
 
-    let dateFormated = `${date.getDay()}.${date.getMonth()}.${date.getFullYear()} ${date.getHours()}:`
+    var dateFormated = `${date.getDay()}.${date.getMonth()}.${date.getFullYear()} ${date.getHours()}:`
     
     if(date.getMinutes() < 10)
         dateFormated += `0${date.getMinutes()}`

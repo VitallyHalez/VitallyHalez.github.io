@@ -1,6 +1,6 @@
 function checkWinner(game){
-    for(let index = 0; index < 5; index++){
-        let winnerCollection = {
+    for(var index = 0; index < 5; index++){
+        var winnerCollection = {
             Row: [
                 "c"+ index +"-0",
                 "c"+ index +"-1",
@@ -31,12 +31,12 @@ function checkWinner(game){
             ]
         }
     
-        let Row=0;
-        let Col=0;
-        let LeftDiagonal=0;
-        let RightDiagonal=0;
+        var Row=0;
+        var Col=0;
+        var LeftDiagonal=0;
+        var RightDiagonal=0;
         
-        for(let i = 0; i < 5; i++){
+        for(var i = 0; i < 5; i++){
             
             if (game.has(winnerCollection.LeftDiagonal[i]))
                 LeftDiagonal++;
@@ -53,26 +53,26 @@ function checkWinner(game){
       
         if(Row == 5 || Col == 5 || LeftDiagonal == 5 || RightDiagonal == 5){
             if (Row == 5){
-                for (let ind = 0 ; ind<5; ind++){
-                    let boxS = document.querySelector(`#c${index}-${ind}`) 
+                for (var ind = 0 ; ind<5; ind++){
+                    var boxS = document.querySelector(`#c${index}-${ind}`) 
                     boxS.classList.add('bg-info');
                 }
             }
             if (Col == 5){
-                for (let ind = 0 ; ind<5; ind++){
-                    let boxS = document.querySelector(`#c${ind}-${index}`) 
+                for (var ind = 0 ; ind<5; ind++){
+                    var boxS = document.querySelector(`#c${ind}-${index}`) 
                     boxS.classList.add('bg-info');
                 }
             }
             if (LeftDiagonal == 5){
-                for (let ind = 0 ; ind<5; ind++){
-                    let boxS = document.querySelector(`#${winnerCollection.LeftDiagonal[ind]}`) 
+                for (var ind = 0 ; ind<5; ind++){
+                    var boxS = document.querySelector(`#${winnerCollection.LeftDiagonal[ind]}`) 
                     boxS.classList.add('bg-info');
                 }
             }
             if (RightDiagonal == 5){
-                for (let ind = 0 ; ind<5; ind++){
-                    let boxS = document.querySelector(`#${winnerCollection.RightDiagonal[ind]}`) 
+                for (var ind = 0 ; ind<5; ind++){
+                    var boxS = document.querySelector(`#${winnerCollection.RightDiagonal[ind]}`) 
                     boxS.classList.add('bg-info');
                 }
             }

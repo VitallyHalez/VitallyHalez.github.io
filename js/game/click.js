@@ -15,7 +15,7 @@ msgBtn.addEventListener("click", function(event) {
     
     renderMsg(inpmsg.value);
 
-    socket.send(JSON.stringify({msg: inpmsg.value, method:'msgtoserver'}));
+    socket.send(JSON.stringify({msg: inpmsg.value, method:'msgtoclient'}));
     //for test i comment this del comment if release
     inpmsg.value="";
 });
@@ -43,5 +43,5 @@ function clickRender(game){
     $(field).bind('click',function(){return false;});
     result.innerText = "ХОДИТ ОПОНЕНТ";
 
-    socket.send(JSON.stringify({game: Array.from(game), method:'renderonserver'}));
+    socket.send(JSON.stringify({game: Array.from(game), method:'renderonclient'}));
 }
