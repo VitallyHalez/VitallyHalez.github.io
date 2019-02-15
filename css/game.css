@@ -99,7 +99,7 @@
   /* Десктоп с большими разрешениями, телевизоры. */
   #field {
     width: 70%;
-    grid-auto-rows: 15vw;
+    grid-auto-rows: 10vw;
   }
   .box {
     font-size: 10vw;
