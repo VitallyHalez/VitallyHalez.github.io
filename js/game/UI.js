@@ -1,11 +1,11 @@
 restartBtn.addEventListener('click', function(){
+    socket.send(JSON.stringify({method: "restart"}));
     location.href = "game.html";
-    socket.send(socket.send(JSON.stringify({method:'restart'})));
 })
 
 menuBtn.addEventListener('click', function(){
+    socket.send(JSON.stringify({method: "restart"}));
     location.href="index.html";
-    socket.send(socket.send(JSON.stringify({method:'restart'})));
 })
 
 chatBtn.addEventListener('click', function(){

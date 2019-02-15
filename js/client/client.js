@@ -1,5 +1,5 @@
-var socket = new WebSocket('wss://jamboapp.herokuapp.com')
-//var socket = new WebSocket('ws://localhost:8081');
+//var socket = new WebSocket('wss://jamboapp.herokuapp.com')
+var socket = new WebSocket('ws://localhost:8081');
 var game = new Set();
 var roomId = "";
 socket.onmessage = function(event) {
