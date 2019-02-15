@@ -10,14 +10,14 @@ document.addEventListener("click", function(event) {
 });
 
 msgBtn.addEventListener("click", function(event) {
-    if(inpmsg.value=="")
+    if (!inpmsg.value) {
         return;
+    }
     
     renderMsg(inpmsg.value);
 
-    socket.send(JSON.stringify({msg: inpmsg.value, method:'msgtoclient'}));
-    //for test i comment this del comment if release
-    inpmsg.value="";
+    socket.send(JSON.stringify({msg: inpmsg.value, method:'onChatMessage'}));
+    inpmsg.value = "";
 });
 
 inpmsg.onkeyup = function (e) {
@@ -43,5 +43,5 @@ function clickRender(game){
     $(field).bind('click',function(){return false;});
     result.innerText = "ХОДИТ ОПОНЕНТ";
 
-    socket.send(JSON.stringify({game: Array.from(game), method:'renderonclient'}));
+    socket.send(JSON.stringify({game: Array.from(game), method:'render'}));
 }
