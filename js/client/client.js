@@ -39,12 +39,12 @@ function render(data) {
     var gameArray = data.game;
     gameArray.forEach(function(item) {
         box = document.querySelector(`#${item}`);
-        box.style.backgroundColor="rgb(211, 193, 32)";
+        box.style.backgroundColor = "rgb(211, 193, 32)";
         game.add(item);
     });
 
     $(field).unbind('click');
-    result.innerText="ВАШ ХОД";
+    result.innerText = "ВАШ ХОД";
 }
 function restart(data) {
     location.href = "game.html";
@@ -98,7 +98,7 @@ function createMsg(msgText, date){
 function createBadge(text){
     span = document.createElement('span')
     span.classList = 'badge badge-success'
-    span.innerText=text;
-    span.id='notify'
+    span.innerText = text;
+    span.id = 'notify'
     return span;
 }
