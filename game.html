@@ -7,87 +7,87 @@
   <link rel="icon" type="image/png" href="favicons/favicon-16x16.png" />
   <link rel="stylesheet" href="css/game.css">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
-    crossorigin="anonymous">
+	crossorigin="anonymous">
   <title>Crosses</title>
 </head>
 
 <body style="background-color: rgb(71, 71, 71); position: relative;">
   <nav class="navbar navbar-light navbar-expand-lg fixed-bottom" style="background-color: #292929;">
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navMenu">
-        <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navMenu">
-      <ul class="navbar-nav mr-auto" style="width: 100%">
-        <button id="menuBtn" class="btn btn-warning btn-lg">MENU</button>
-        <button id="restartBtn" class="btn btn-outline-warning btn-lg">RESTART</button>
-        <button id="Redo" class="btn btn-outline-danger btn-lg disabled">NEW</button>
-        <button id="chatBtn" class="btn btn-outline-success btn-lg">CHAT</button>
-        <div class="text-warning lead">У режимі тестування</div>
-      </ul>
-    </div>
+	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navMenu">
+		<span class="navbar-toggler-icon"></span>
+	</button>
+	<div class="collapse navbar-collapse" id="navMenu">
+	  <ul class="navbar-nav mr-auto" style="width: 100%">
+		<button id="menuBtn" class="btn btn-warning btn-lg">MENU</button>
+		<button id="restartBtn" class="btn btn-outline-warning btn-lg">RESTART</button>
+		<button id="Redo" class="btn btn-outline-danger btn-lg disabled">NEW</button>
+		<button id="chatBtn" class="btn btn-outline-success btn-lg">CHAT</button>
+		<div class="text-warning lead">У режимі тестування</div>
+	  </ul>
+	</div>
   </nav>
   <div class="progress" id="progress">
-    <div class="progress-bar progress-bar-striped progress-bar-animated bg-warning" role="progressbar" aria-valuenow="100"
-      aria-valuemin="0" aria-valuemax="100" style="width: 100%"></div>
+	<div class="progress-bar progress-bar-striped progress-bar-animated bg-warning" role="progressbar" aria-valuenow="100"
+	  aria-valuemin="0" aria-valuemax="100" style="width: 100%"></div>
   </div>
   <div class="text-center">
-    <h3 id="result" class="text-warning"></h3>
+	<h3 id="result" class="text-warning"></h3>
   </div>
   <div id="chat" class="card text-warning bg-dark">
-    <div id="test" class="card-body">
-      <ul id="allmsg" class="list-group">
-        <li class="list-group-item bg-dark border-info text-secondary">
-          Чат с опонентом
-          <!-- <span class="badge badge-primary badge-pill">Ok</span> -->
-        </li>
-      </ul>
-    </div>
-    <div class="card-footer">
-      <div class="input-group">
-        <input id='inpmsg' class="form-control border-info bg-dark text-warning" placeholder="Введите ваше сообщение">
-        <div class="input-group-append">
-          <button id="msgBtn" class="btn btn-outline-info">Отправить</button>
-        </div>
-      </div>
-    </div>
+	<div id="test" class="card-body">
+	  <ul id="allmsg" class="list-group">
+		<li class="list-group-item bg-dark border-info text-secondary">
+		  Чат с опонентом
+		  <!-- <span class="badge badge-primary badge-pill">Ok</span> -->
+		</li>
+	  </ul>
+	</div>
+	<div class="card-footer">
+	  <div class="input-group">
+		<input id='inpmsg' class="form-control border-info bg-dark text-warning" placeholder="Введите ваше сообщение">
+		<div class="input-group-append">
+		  <button id="msgBtn" class="btn btn-outline-info">Отправить</button>
+		</div>
+	  </div>
+	</div>
   </div>
   <div id="field" class="container">
-    <div id="c0-0" class="box"></div>
-    <div id="c0-1" class="box"></div>
-    <div id="c0-2" class="box"></div>
-    <div id="c0-3" class="box"></div>
-    <div id="c0-4" class="box"></div>
-    <div id="c1-0" class="box"></div>
-    <div id="c1-1" class="box"></div>
-    <div id="c1-2" class="box"></div>
-    <div id="c1-3" class="box"></div>
-    <div id="c1-4" class="box"></div>
-    <div id="c2-0" class="box"></div>
-    <div id="c2-1" class="box"></div>
-    <div id="c2-2" class="box"></div>
-    <div id="c2-3" class="box"></div>
-    <div id="c2-4" class="box"></div>
-    <div id="c3-0" class="box"></div>
-    <div id="c3-1" class="box"></div>
-    <div id="c3-2" class="box"></div>
-    <div id="c3-3" class="box"></div>
-    <div id="c3-4" class="box"></div>
-    <div id="c4-0" class="box"></div>
-    <div id="c4-1" class="box"></div>
-    <div id="c4-2" class="box"></div>
-    <div id="c4-3" class="box"></div>
-    <div id="c4-4" class="box"></div>
+	<div id="c0-0" class="box"></div>
+	<div id="c0-1" class="box"></div>
+	<div id="c0-2" class="box"></div>
+	<div id="c0-3" class="box"></div>
+	<div id="c0-4" class="box"></div>
+	<div id="c1-0" class="box"></div>
+	<div id="c1-1" class="box"></div>
+	<div id="c1-2" class="box"></div>
+	<div id="c1-3" class="box"></div>
+	<div id="c1-4" class="box"></div>
+	<div id="c2-0" class="box"></div>
+	<div id="c2-1" class="box"></div>
+	<div id="c2-2" class="box"></div>
+	<div id="c2-3" class="box"></div>
+	<div id="c2-4" class="box"></div>
+	<div id="c3-0" class="box"></div>
+	<div id="c3-1" class="box"></div>
+	<div id="c3-2" class="box"></div>
+	<div id="c3-3" class="box"></div>
+	<div id="c3-4" class="box"></div>
+	<div id="c4-0" class="box"></div>
+	<div id="c4-1" class="box"></div>
+	<div id="c4-2" class="box"></div>
+	<div id="c4-3" class="box"></div>
+	<div id="c4-4" class="box"></div>
   </div>
   <script src="js/client/client.js"></script>
   <script src="js/game/click.js"></script>
   <script src="js/game/UI.js"></script>
   <!-- <script src="js/game/checkWinner.js"></script> -->
   <script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
-    crossorigin="anonymous"></script>
+	crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
-    crossorigin="anonymous"></script>
+	crossorigin="anonymous"></script>
   <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
-    crossorigin="anonymous"></script>
+	crossorigin="anonymous"></script>
 </body>
 
 </html>
